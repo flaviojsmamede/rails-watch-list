@@ -1,0 +1,4 @@
+<%= image_tag @movie.poster_url, alt: "movie poster", width: 100 %>
+<h1><%= @movie.title %></h1>
+<p><%= @movie.overview %></p>
+<%= link_to "Movies List", movies_path(@movies), class: "btn btn-primary" %>

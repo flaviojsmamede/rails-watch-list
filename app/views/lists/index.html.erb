@@ -1,0 +1,5 @@
+<h1>INDEX all lists</h1>
+<%= link_to 'Create List', new_list_path(@list), class: 'btn btn-primary' %>
+<% @lists.each do |list| %>
+ <h2><%= link_to list.name, list_path(list.id) %></h2>
+<% end %>
