@@ -1,6 +1,12 @@
-<h1>Create new list</h1>
-<%= simple_form_for(@list) do |f| %>
-  <%= f.input :name %>
-  <%= f.submit %>
-<% end %>
-<%= link_to 'Back to lists', lists_path, class: 'btn btn-primary' %>
+<div class="banner">
+  <div class="container">
+    <h1><strong>Create new movie list</strong></h1>
+  </div>
+</div>
+
+<div class="container col-4 pt-5">
+  <%= simple_form_for(@list) do |f| %>
+    <%= f.input :name %>
+    <%= f.submit class: "btn btn-outline-dark"%>
+  <% end %>
+</div>

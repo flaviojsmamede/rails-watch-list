@@ -1,5 +1,33 @@
-<h1><%= @list.name %></h1>
+<div class="banner">
+  <div class="container">
+    <h1><strong><%= @list.name %></strong></h1>
+  </div>
+</div>
+
+<%# <h1><%= @list.name %></h1>
 <%# <%= @bookmark.comment %>
-<%= link_to 'Back to lists', lists_path %>
-<%= link_to 'Add a movie', new_list_bookmark_path(@list.id) %>
-<%= link_to 'Delete List', lists_path(@list.id) %>
+<div class="container d-flex justify-content-between">
+  <%= link_to 'Back to lists', lists_path, class: "btn btn-outline-dark"%>
+  <%= link_to 'Add a movie', new_list_bookmark_path(@list.id), class: "btn btn-outline-dark" %>
+</div>
+
+<%# d-flex flex-row justify-content-between flex-wrap gap-2 %>
+
+ <%# col-6 mt-3 d-flex flex-wrap %>
+<div class="container cards-bookmarks mt-4">
+  <% @list.bookmarks.each do |bookmark| %>
+    <div class="card">
+      <div class="d-flex flex-row">
+        <div>
+          <%= image_tag bookmark.movie.poster_url, alt: "movie poster", width: 150 %>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title"><%= bookmark.movie.title %></h3>
+          <p class="card-text"><%= bookmark.movie.overview %></p>
+          <%# <a href="#" class="btn btn-primary">Go somewhere</a> %>
+          <%= link_to "Delete", bookmark_path(bookmark.id), class: "btn btn-outline-danger", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

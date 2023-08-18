@@ -1,10 +1,13 @@
+<div class="banner">
+  <div class="container">
+    <h1>Save any kind of <strong>movies</strong></h1>
+  </div>
+</div>
+
 <div class="container text-center">
-  <%# <div class=" d-flex justify-content-between mb-4 align-items-center">
-      <h3>My lists</h3>
-  </div> %>
   <div class="cards">
     <% @lists.each do |list| %>
-      <div class="card">
+      <div class="card-movie">
         <h2><%= link_to list.name, list_path(list.id) %></h2>
       </div>
     <% end %>
