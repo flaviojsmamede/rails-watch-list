@@ -1,0 +1,26 @@
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 16px;
+}
+
+.card {
+  height: 200px;
+  background-image:
+    linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+    url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.4s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.card a {
+  color: $light-gray;
+  text-decoration: none;
+}

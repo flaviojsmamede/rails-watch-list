@@ -26,6 +26,12 @@ class ListsController < ApplicationController
     # @bookmark = Bookmark.select { |bookmark| bookmark.list_id }
   end
 
+  def destroy
+    @list = List.find(params[:id])
+    @list.destroy
+    redirect_to lists_path, status: :see_other
+  end
+
   private
 
   # def set_list
