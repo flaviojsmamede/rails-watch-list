@@ -4,6 +4,22 @@
     grid-gap: 16px;
 }
 
+@media only screen and (max-width: 900px) {
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 16px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 16px;
+  }
+}
+
 .cards-bookmarks {
   display: grid;
   grid-template-columns: 1fr 1fr;
