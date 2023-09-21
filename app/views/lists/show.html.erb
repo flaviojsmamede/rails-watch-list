@@ -7,7 +7,7 @@
 <div class="container d-flex justify-content-between">
   <%= link_to 'Back to lists', lists_path, class: "btn btn-outline-dark"%>
   <div>
-    <%= link_to "Delete list", lists_path(@list), class: "btn btn-outline-danger", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+    <%= link_to "Delete list", list_path(@list), class: "btn btn-outline-danger", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
     <%= link_to 'Add a movie', new_list_bookmark_path(@list.id), class: "btn btn-outline-dark" %>
   </div>
 </div>
